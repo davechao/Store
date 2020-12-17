@@ -8,7 +8,6 @@ import com.swiper.store.R
 import com.swiper.store.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-
 class MainActivity : BaseActivity() {
 
     private val viewModel: MainViewModel by viewModels()
@@ -18,10 +17,15 @@ class MainActivity : BaseActivity() {
 
         space_navigation_view.also {
             it.initWithSaveInstanceState(savedInstanceState)
-            it.addSpaceItem(SpaceItem("HOME", R.mipmap.ic_launcher))
-            it.addSpaceItem(SpaceItem("SEARCH", R.mipmap.ic_launcher))
-            it.shouldShowFullBadgeText(true)
+            it.addSpaceItem(SpaceItem("PHONE", R.drawable.ic_outline_phone_24))
+            it.addSpaceItem(SpaceItem("CHAT", R.drawable.ic_outline_chat_24))
+            it.addSpaceItem(SpaceItem("EXPLORE", R.drawable.ic_outline_explore_24))
+            it.addSpaceItem(SpaceItem("WALLET", R.drawable.ic_outline_account_balance_wallet_24))
+
+            it.shouldShowFullBadgeText(false)
             it.setCentreButtonIconColorFilterEnabled(false)
+            it.showIconOnly()
+
             it.setSpaceOnClickListener(object : SpaceOnClickListener {
                 override fun onCentreButtonClick() {
                     it.shouldShowFullBadgeText(true)
@@ -36,6 +40,10 @@ class MainActivity : BaseActivity() {
                 }
             })
         }
+
+//        space_navigation_view.shouldShowFullBadgeText(true)
+//        space_navigation_view.showBadgeAtIndex(3, 1, Color.RED)
+
     }
 
     override fun getLayoutId(): Int {
