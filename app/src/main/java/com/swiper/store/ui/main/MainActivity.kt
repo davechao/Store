@@ -23,7 +23,6 @@ class MainActivity : BaseActivity() {
             it.addSpaceItem(SpaceItem("WALLET", R.drawable.ic_outline_account_balance_wallet_24))
 
             it.shouldShowFullBadgeText(false)
-            it.setCentreButtonIconColorFilterEnabled(false)
             it.showIconOnly()
 
             it.setSpaceOnClickListener(object : SpaceOnClickListener {
