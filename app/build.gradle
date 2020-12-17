@@ -78,6 +78,9 @@ dependencies {
     // CircleImageView
     implementation "de.hdodenhof:circleimageview:$circle_image_view_version"
 
+    // SpaceNavigationView
+    implementation "com.github.armcha:SpaceNavigationView:$space_navigation_view_version"
+
     // Stetho
     implementation "com.facebook.stetho:stetho:$stetho_version"
     implementation "com.facebook.stetho:stetho-okhttp3:$stetho_version"
