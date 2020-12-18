@@ -6,4 +6,7 @@
     <string name="explore">Explore</string>
     <string name="wallet">Wallet</string>
 
+    <string name="promotion_code">活動代碼</string>
+    <string name="e_commerce">合作電商</string>
+    <string name="mall">滑眾商城</string>
 </resources>

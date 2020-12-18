@@ -6,8 +6,8 @@ import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.swiper.store.R
 import com.swiper.store.ui.base.BaseFragment
+import com.swiper.store.widget.utility.GeneralUtils
 import kotlinx.android.synthetic.main.fragment_wallet.*
-import timber.log.Timber
 
 class WalletFragment : BaseFragment() {
 
@@ -20,6 +20,26 @@ class WalletFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        iv_notification.setOnClickListener {
+            GeneralUtils.showToast(requireContext(), "Notification Click!")
+        }
+
+        iv_settings.setOnClickListener {
+            GeneralUtils.showToast(requireContext(), "Settings Click!")
+        }
+
+        tv_code.setOnClickListener {
+            GeneralUtils.showToast(requireContext(), getString(R.string.promotion_code))
+        }
+
+        tv_e_commerce.setOnClickListener {
+            GeneralUtils.showToast(requireContext(), getString(R.string.e_commerce))
+        }
+
+        tv_mall.setOnClickListener {
+            GeneralUtils.showToast(requireContext(), getString(R.string.mall))
+        }
+
         viewModel.meResult.observe(viewLifecycleOwner, {
             tv_name.text = it.name
             tv_tag.text = it.tag
@@ -31,14 +51,6 @@ class WalletFragment : BaseFragment() {
         })
 
         viewModel.getMe()
-
-        iv_notification.setOnClickListener {
-            Timber.d("Notification Click!")
-        }
-
-        iv_settings.setOnClickListener {
-            Timber.d("Settings Click!")
-        }
     }
 
     override fun getLayoutId(): Int {
