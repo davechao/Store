@@ -1,8 +1,10 @@
 package com.swiper.store.ui.main
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.luseen.spacenavigation.SpaceItem
 import com.luseen.spacenavigation.SpaceOnClickListener
 import com.swiper.store.R
@@ -13,6 +15,8 @@ import com.swiper.store.ui.phone.PhoneFragment
 import com.swiper.store.ui.wallet.WalletFragment
 import com.swiper.store.widget.utility.GeneralUtils
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : BaseActivity() {
 
@@ -60,8 +64,17 @@ class MainActivity : BaseActivity() {
 
         navigateTo(PhoneFragment())
 
-//        space_navigation_view.shouldShowFullBadgeText(true)
-//        space_navigation_view.showBadgeAtIndex(3, 1, Color.RED)
+        viewModel.badgeResult.observe(this, {
+            space_navigation_view.also { navigationView ->
+                navigationView.shouldShowFullBadgeText(true)
+                navigationView.showBadgeAtIndex(3, it, Color.RED)
+            }
+        })
+
+        lifecycleScope.launch {
+            delay(500)
+            viewModel.fetchBadge()
+        }
     }
 
     override fun getLayoutId(): Int {
