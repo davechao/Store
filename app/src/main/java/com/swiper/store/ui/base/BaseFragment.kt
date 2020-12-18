@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.swiper.store.R
 import com.swiper.store.ui.main.MainViewModel
 
 abstract class BaseFragment : Fragment() {
@@ -32,4 +33,9 @@ abstract class BaseFragment : Fragment() {
     }
 
     abstract fun getLayoutId(): Int
+
+    fun navigateTo(fragment: Fragment) {
+        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.layout_fragment, fragment).commit()
+    }
 }
