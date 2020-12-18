@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide
 import com.swiper.store.R
 import com.swiper.store.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_wallet.*
+import timber.log.Timber
 
 class WalletFragment : BaseFragment() {
 
@@ -30,6 +31,14 @@ class WalletFragment : BaseFragment() {
         })
 
         viewModel.getMe()
+
+        iv_notification.setOnClickListener {
+            Timber.d("Notification Click!")
+        }
+
+        iv_settings.setOnClickListener {
+            Timber.d("Settings Click!")
+        }
     }
 
     override fun getLayoutId(): Int {
