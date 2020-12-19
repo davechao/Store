@@ -11,8 +11,7 @@ class CurrencyRecordViewModel : BaseViewModel() {
     private val _currencyRecordResult = MutableLiveData<List<CurrencyRecordItem>>()
     val currencyRecordResult: LiveData<List<CurrencyRecordItem>> = _currencyRecordResult
 
-
-    fun getCurrencyRecord() {
+    fun getCurrencyRecords() {
         val list = arrayListOf<CurrencyRecordItem>()
         val recordItem = CurrencyRecordItem(
             "https://upload.wikimedia.org/wikipedia/commons/6/6f/Ethereum-icon-purple.svg",
