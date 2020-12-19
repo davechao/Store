@@ -18,6 +18,7 @@ import java.lang.StringBuilder
 
 class CurrencyRecordAdapter(
     private val records: List<CurrencyRecordItem>,
+    private val funcListener: CurrencyRecodeFuncListener
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -78,8 +79,9 @@ class CurrencyRecordAdapter(
                     .append(" ")
                     .append(holder.dateText.context.getString(R.string.expired_day))
                     .toString()
-                holder.recordDetailText.setOnClickListener {
 
+                holder.recordDetailText.setOnClickListener {
+                    funcListener.onDetailClick()
                 }
             }
             is AdViewHolder -> {
