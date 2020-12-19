@@ -14,7 +14,7 @@ class CurrencyRecordViewModel : BaseViewModel() {
     fun getCurrencyRecords() {
         val list = arrayListOf<CurrencyRecordItem>()
         val recordItem = CurrencyRecordItem(
-            "https://upload.wikimedia.org/wikipedia/commons/6/6f/Ethereum-icon-purple.svg",
+            "https://cdn3.iconfinder.com/data/icons/currency-and-cryptocurrency-signs/64/cryptocurrency_blockchain_Bitcoin_BTC-512.png",
             "9,102,619.123",
             "XNC(無限錢包)",
             328,

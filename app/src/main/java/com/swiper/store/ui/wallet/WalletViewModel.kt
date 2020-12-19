@@ -14,7 +14,7 @@ class WalletViewModel : BaseViewModel() {
         _meResult.value = MeItem(
             "Starbucks",
             "store",
-            "https://www.shareicon.net/data/128x128/2015/09/01/94011_starbucks_512x512.png"
+            "https://freepngimg.com/thumb/starbucks/24318-4-starbucks-logo-photos.png"
         )
     }
 
