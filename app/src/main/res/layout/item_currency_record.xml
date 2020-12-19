@@ -1,201 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="12sp"
-    android:layout_marginEnd="12dp"
-    android:layout_marginBottom="12dp"
-    android:background="@color/white"
-    app:cardCornerRadius="6dp">
+    android:layout_marginStart="8sp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="12dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp">
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_pg_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.6" />
-
-        <ImageView
-            android:id="@+id/iv_currency"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/ic_launcher"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_currency"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/currency"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/iv_currency"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_wallet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/gray"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_currency"
-            app:layout_constraintStart_toStartOf="@+id/tv_currency"
-            app:layout_constraintTop_toBottomOf="@+id/tv_currency"
-            tools:text="XNC(無限錢包)" />
-
-        <TextView
-            android:id="@+id/tv_currency_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_currency"
-            tools:text="9,102,619" />
-
-        <TextView
-            android:id="@+id/tv_sub_currency_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/gray"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_currency_value"
-            app:layout_constraintTop_toTopOf="@+id/tv_wallet"
-            tools:text=".123" />
-
-        <ProgressBar
-            android:id="@+id/pb_date"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="0dp"
-            android:layout_height="10dp"
-            android:layout_marginTop="16dp"
-            android:max="100"
-            android:progressDrawable="@drawable/bg_progressbar"
-            app:layout_constraintEnd_toEndOf="@+id/gl_pg_end"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_currency" />
-
-        <TextView
-            android:id="@+id/tv_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/gray"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/pb_date"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/pb_date"
-            tools:text="328 天後到期" />
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout_rewards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/bg_color"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pb_date">
+            android:paddingStart="12dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="12dp">
 
-            <TextView
-                android:id="@+id/tv_interaction_rewards"
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_pg_end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:paddingTop="8dp"
-                android:text="@string/interaction_rewards"
-                android:textColor="@color/black"
-                android:textSize="14sp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6" />
+
+            <ImageView
+                android:id="@+id/iv_currency"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/ic_launcher"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_interaction_rewards_value"
+                android:id="@+id/tv_currency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:paddingTop="8dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/currency"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/iv_currency"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:textColor="@color/gray"
-                android:textSize="14sp"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_currency"
+                app:layout_constraintStart_toStartOf="@+id/tv_currency"
+                app:layout_constraintTop_toBottomOf="@+id/tv_currency"
+                tools:text="XNC(無限錢包)" />
+
+            <TextView
+                android:id="@+id/tv_currency_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="+1.849" />
+                app:layout_constraintTop_toTopOf="@+id/tv_currency"
+                tools:text="9,102,619" />
 
             <TextView
-                android:id="@+id/tv_social_rewards"
+                android:id="@+id/tv_sub_currency_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/social_rewards"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@+id/tv_interaction_rewards"
-                app:layout_constraintTop_toBottomOf="@+id/tv_interaction_rewards" />
-
-            <TextView
-                android:id="@+id/tv_social_rewards_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:textColor="@color/gray"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/tv_interaction_rewards_value"
-                app:layout_constraintTop_toBottomOf="@+id/tv_interaction_rewards_value"
-                tools:text="+681.213" />
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_currency_value"
+                app:layout_constraintTop_toTopOf="@+id/tv_wallet"
+                tools:text=".123" />
+
+            <ProgressBar
+                android:id="@+id/pb_date"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="16dp"
+                android:max="100"
+                android:progressDrawable="@drawable/bg_progressbar"
+                app:layout_constraintEnd_toEndOf="@+id/gl_pg_end"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_currency" />
 
             <TextView
-                android:id="@+id/tv_revenue"
+                android:id="@+id/tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:paddingBottom="8dp"
-                android:text="@string/revenue"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@+id/tv_interaction_rewards"
-                app:layout_constraintTop_toBottomOf="@+id/tv_social_rewards" />
-
-            <TextView
-                android:id="@+id/tv_revenue_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:paddingBottom="8dp"
                 android:textColor="@color/gray"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/tv_interaction_rewards_value"
-                app:layout_constraintTop_toBottomOf="@+id/tv_social_rewards_value"
-                tools:text="+1,793.729" />
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/pb_date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/pb_date"
+                tools:text="328 天後到期" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_rewards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/bg_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pb_date">
+
+                <TextView
+                    android:id="@+id/tv_interaction_rewards"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/interaction_rewards"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_interaction_rewards_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:paddingTop="8dp"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="+1.849" />
+
+                <TextView
+                    android:id="@+id/tv_social_rewards"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/social_rewards"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_interaction_rewards"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_interaction_rewards" />
+
+                <TextView
+                    android:id="@+id/tv_social_rewards_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_interaction_rewards_value"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_interaction_rewards_value"
+                    tools:text="+681.213" />
+
+                <TextView
+                    android:id="@+id/tv_revenue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/revenue"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_interaction_rewards"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_social_rewards" />
+
+                <TextView
+                    android:id="@+id/tv_revenue_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="8dp"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_interaction_rewards_value"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_social_rewards_value"
+                    tools:text="+1,793.729" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_record_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/record_detail"
+                android:textColor="@color/teal_200"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_rewards" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/tv_record_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/record_detail"
-            android:textColor="@color/teal_200"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout_rewards" />
+    </androidx.cardview.widget.CardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_red_oval"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.cardview.widget.CardView>
-
+</androidx.constraintlayout.widget.ConstraintLayout>
