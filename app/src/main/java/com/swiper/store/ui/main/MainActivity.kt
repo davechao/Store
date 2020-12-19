@@ -81,10 +81,6 @@ class MainActivity : BaseActivity() {
         return R.layout.activity_main
     }
 
-    private fun setupNavigationView() {
-
-    }
-
     private fun navigateTo(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.layout_fragment, fragment).commit()

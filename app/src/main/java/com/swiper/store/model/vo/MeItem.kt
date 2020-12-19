@@ -1,4 +1,4 @@
-package com.swiper.store.ui.model.vo
+package com.swiper.store.model.vo
 
 data class MeItem(
     val name: String,

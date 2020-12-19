@@ -12,5 +12,7 @@
     <color name="bg_color">#f3f3f3</color>
     <color name="line_vertical">#EEEEEE</color>
 
+    <color name="tab_color">#9E9E9E</color>
+
 
 </resources>

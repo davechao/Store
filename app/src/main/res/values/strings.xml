@@ -9,4 +9,6 @@
     <string name="promotion_code">活動代碼</string>
     <string name="e_commerce">合作電商</string>
     <string name="mall">滑眾商城</string>
+    <string name="currency_record">容幣紀錄</string>
+    <string name="voucher">兌換卷</string>
 </resources>

@@ -3,7 +3,7 @@ package com.swiper.store.ui.wallet
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.swiper.store.ui.base.BaseViewModel
-import com.swiper.store.ui.model.vo.MeItem
+import com.swiper.store.model.vo.MeItem
 
 class WalletViewModel : BaseViewModel() {
 

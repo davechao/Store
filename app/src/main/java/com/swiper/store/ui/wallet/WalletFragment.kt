@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
+import com.google.android.material.tabs.TabLayoutMediator
 import com.swiper.store.R
 import com.swiper.store.ui.base.BaseFragment
 import com.swiper.store.widget.utility.GeneralUtils
@@ -19,6 +20,11 @@ class WalletFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val tabs = arrayListOf(
+            getString(R.string.currency_record),
+            getString(R.string.voucher),
+        )
 
         iv_notification.setOnClickListener {
             GeneralUtils.showToast(requireContext(), "Notification Click!")
@@ -39,6 +45,16 @@ class WalletFragment : BaseFragment() {
         tv_mall.setOnClickListener {
             GeneralUtils.showToast(requireContext(), getString(R.string.mall))
         }
+
+        viewpager.adapter = WalletViewPagerAdapter(this)
+
+        TabLayoutMediator(layout_tab, viewpager) { tab, position ->
+            tab.text = tabs[position]
+//            val view = View.inflate(requireContext(), R.layout.custom_tab, null)
+//            val textView = view?.findViewById<TextView>(R.id.tv_title)
+//            textView?.text = menusItems[position].name
+//            tab.customView = view
+        }.attach()
 
         viewModel.meResult.observe(viewLifecycleOwner, {
             tv_name.text = it.name
