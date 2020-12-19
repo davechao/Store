@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import com.swiper.store.R
 import com.swiper.store.ui.base.BaseFragment
+import kotlinx.android.synthetic.main.fragment_currency_record.*
 
 class CurrencyRecordFragment : BaseFragment() {
 
@@ -16,6 +17,12 @@ class CurrencyRecordFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel.currencyRecordResult.observe(viewLifecycleOwner, {
+            rv_currency_record.adapter = CurrencyRecordAdapter(it)
+        })
+
+        viewModel.getCurrencyRecord()
     }
 
     override fun getLayoutId(): Int {

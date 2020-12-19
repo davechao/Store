@@ -11,4 +11,12 @@
     <string name="mall">滑眾商城</string>
     <string name="currency_record">容幣紀錄</string>
     <string name="voucher">兌換卷</string>
+
+    <string name="currency">容幣</string>
+
+    <string name="interaction_rewards">Interaction Rewards</string>
+    <string name="social_rewards">Social Rewards</string>
+    <string name="revenue">Revenue</string>
+    <string name="record_detail">更多詳情</string>
+    <string name="expired_day">天候到期</string>
 </resources>

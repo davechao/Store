@@ -23,7 +23,7 @@ class WalletFragment : BaseFragment() {
 
         val tabs = arrayListOf(
             getString(R.string.currency_record),
-            getString(R.string.voucher),
+            getString(R.string.voucher) + " (2)",
         )
 
         iv_notification.setOnClickListener {
@@ -50,10 +50,6 @@ class WalletFragment : BaseFragment() {
 
         TabLayoutMediator(layout_tab, viewpager) { tab, position ->
             tab.text = tabs[position]
-//            val view = View.inflate(requireContext(), R.layout.custom_tab, null)
-//            val textView = view?.findViewById<TextView>(R.id.tv_title)
-//            textView?.text = menusItems[position].name
-//            tab.customView = view
         }.attach()
 
         viewModel.meResult.observe(viewLifecycleOwner, {

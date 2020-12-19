@@ -154,7 +154,7 @@
             android:text="@string/e_commerce"
             android:textColor="@color/black"
             android:textSize="14sp"
-            app:drawableTopCompat="@drawable/ic_outline_store_24"
+            app:drawableTopCompat="@drawable/ic_outline_storefront_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/gl_tab_second_start"
             app:layout_constraintStart_toStartOf="@id/gl_tab_start"
