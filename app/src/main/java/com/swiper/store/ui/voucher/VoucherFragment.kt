@@ -6,10 +6,12 @@ import androidx.fragment.app.viewModels
 import com.swiper.store.R
 import com.swiper.store.ui.base.BaseFragment
 import com.swiper.store.ui.currencyrecord.CurrencyRecordAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_currency_record.*
 import kotlinx.android.synthetic.main.fragment_currency_record.rv_currency_record
 import kotlinx.android.synthetic.main.fragment_voucher.*
 
+@AndroidEntryPoint
 class VoucherFragment : BaseFragment() {
 
     private val viewModel: VoucherViewModel by viewModels()

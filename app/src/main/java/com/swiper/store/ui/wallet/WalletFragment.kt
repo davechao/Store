@@ -8,8 +8,10 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.swiper.store.R
 import com.swiper.store.ui.base.BaseFragment
 import com.swiper.store.widget.utility.GeneralUtils
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_wallet.*
 
+@AndroidEntryPoint
 class WalletFragment : BaseFragment() {
 
     private val viewModel: WalletViewModel by viewModels()

@@ -14,10 +14,12 @@ import com.swiper.store.ui.explore.ExploreFragment
 import com.swiper.store.ui.phone.PhoneFragment
 import com.swiper.store.ui.wallet.WalletFragment
 import com.swiper.store.widget.utility.GeneralUtils
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
     companion object {

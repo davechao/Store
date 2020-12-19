@@ -3,8 +3,10 @@ package com.swiper.store
 import android.app.Application
 import com.facebook.stetho.Stetho
 import com.swiper.store.widget.log.DebugLogTree
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
+@HiltAndroidApp
 class App : Application() {
 
     companion object {
